@@ -12,7 +12,7 @@ appRouter
 .get("/:id",async (req,res)=>{
     const id = req.params.id;
     const obj = await Events.findById(id)
-    res.send(obj);
+    res.send({"event":obj});
 })
 
 

@@ -5,5 +5,26 @@ Built and Tested on node js version 20.10.0
 How to run the application ? 
  1. Clone the repository to local system.
  2. Run command npm install in terminal in the root directory of project.
- 3. start your application by command - npm start 
- 4. Make sure you have enough permissions to run nodemon package in the pc, if not run the command - node server.js
+ 3. setup your mongodb server at localhost:27017 
+ 4. start your application by command - npm run start 
+
+Endpoints - 
+    1. /     - get - gives all the events
+                    body format - {}
+                    response format - {events:[]}
+
+    2. /:id  - get - gives event of that id
+                    body format - {}
+                    response format - {event:{}}
+
+    3. /     - post - saves the event in database
+                    body format - {eventSchema}
+                    response format - gives an object containing the event including the id and timestamps
+
+    4. /:id - put - updates the content of a event
+                    body format - {eventName:"reception"}
+                    response format - {message : "Event updated",event:{Updated Event}}
+
+    5. /:id - delete - deletes the event
+                    body format - {}
+                    response format - {message : "Successfully deleted"}
